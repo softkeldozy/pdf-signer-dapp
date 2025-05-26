@@ -24,7 +24,7 @@ function App() {
     console.log("PDF ready for signing:", fileData);
   };
 
-  // Handle signing and verification
+  // Handle Signing and Verification
   const handleSignAndVerify = async () => {
     if (!pdfData || !account) return;
 
@@ -62,7 +62,7 @@ function App() {
       )}
       return (
       <div className="app">
-        {/* ... other components for later ad ons... */}
+        {/* ... Other Components For Later Ad Ons... */}
 
         {/* Status of Signature Transaction Hash */}
         <SignatureStatus signature={signature} txHash={txHash} />
