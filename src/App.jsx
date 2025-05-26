@@ -6,6 +6,9 @@ import SignatureStatus from "./components/SignatureStatus";
 import WalletConnector from "./components/WalletConnector";
 import { useSignProtocol } from "./hooks/useSignProtocol";
 
+import { getEthSignClient } from "../lib/ethSignSDK";
+import { getEthersProvider } from "../utils/ethersProvider";
+
 function App() {
   const [pdfData, setPdfData] = useState(null);
   const [signature, setSignature] = useState("");
@@ -44,6 +47,28 @@ function App() {
       alert(`Signing error: ${error.message}`);
     }
   };
+
+  // Using Ethers
+  function MyComponent() {
+    const [balance, setBalance] = useState("");
+
+    useEffect(() => {
+      const fetchBalance = async () => {
+        const provider = getEthersProvider();
+        const balance = await provider.getBalance("0x...");
+        setBalance(ethers.formatEther(balance));
+      };
+      fetchBalance();
+    }, []);
+
+    // Using EthSign SDK (When Needed)
+    const handleAttestation = async () => {
+      const spClient = getEthSignClient();
+      const attestation = await spClient.issueAttestation({
+        // ... params
+      });
+    };
+  }
 
   return (
     <div className="app">
