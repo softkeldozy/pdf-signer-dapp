@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ethers } from "ethers";
-import PdfVerifier from "../contracts/PdfVerifier.json";
+import PdfVerifier from "../../artifacts/contracts/PdfVerifier.sol/PdfVerifier.json";
 import { SignProtocolClient } from "@ethsign/sp-sdk";
 
 export const useSignProtocol = () => {
