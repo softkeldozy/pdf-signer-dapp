@@ -65,7 +65,7 @@ function App() {
         {/* ... other components for later ad ons... */}
 
         {/* Status of Signature Transaction Hash */}
-        {/* <SignatureStatus signature={signature} txHash={txHash} /> */}
+        <SignatureStatus signature={signature} txHash={txHash} />
 
         {pdfData?.previewUrl && (
           <div className="pdf-preview-container">{/* ... */}</div>
