@@ -6,8 +6,8 @@ import SignatureStatus from "./components/SignatureStatus";
 import WalletConnector from "./components/WalletConnector";
 import { useSignProtocol } from "./hooks/useSignProtocol";
 
-import { getEthSignClient } from "../lib/ethSignSDK";
-import { getEthersProvider } from "../utils/ethersProvider";
+import { getEthSignClient } from "../src/lib/blockchain/ethSignClient";
+import { getEthersProvider } from "../src/utils/ethersProvider";
 
 function App() {
   const [pdfData, setPdfData] = useState(null);

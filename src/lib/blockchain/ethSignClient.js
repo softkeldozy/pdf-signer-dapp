@@ -1,5 +1,5 @@
 // src/lib/blockchain/ethSignClient.js
-import { SignProtocol } from "@ethsign/sp-sdk";
+import { SignProtocolClient } from "@ethsign/sp-sdk";
 
 // Configuration object
 const sdkConfig = {
@@ -12,7 +12,7 @@ let spClientInstance;
 
 export const getEthSignClient = () => {
   if (!spClientInstance) {
-    spClientInstance = new SignProtocol(sdkConfig);
+    spClientInstance = new SignProtocolClient(sdkConfig);
 
     // Optional: Verify connection
     console.debug("EthSign SDK initialized:", spClientInstance);
